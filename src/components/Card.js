@@ -6,7 +6,7 @@ class Card extends Component {
   constructor(props){
     super(props)
     this.state = {
-        flipped: false
+        flipped: this.props.flipped
     }
   }
 
@@ -22,7 +22,7 @@ class Card extends Component {
     renderCard(){
         if (this.state.flipped === true){
             return (
-                <div className="card flippedCard"></div>
+                <div className="card flippedCard">{this.props.card.slice(0,-1)}</div>
             )
         }else if (this.state.flipped === false){
             return(
@@ -33,7 +33,7 @@ class Card extends Component {
    
     render() { 
     return (
-      <div className="hand" onClick={this.handleClick}>
+      <div onClick={this.handleClick}>
             {this.renderCard()}
       </div>
     );

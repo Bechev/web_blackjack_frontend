@@ -1,22 +1,32 @@
-.hand{
-    
+.hand{ 
     display: inline-block;
     
-    margin: 0.5em;
+    margin: -1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .card{
-    height: 17em;
-    width: 10em;
+    height: 12em;
+    width: 7em;
     
     border-width: 0.8em;
     border-style: solid;
     border-color: white;
-    border-radius: 0.8em;
+    border-radius: 0.8em;    
     
-    display: inline-block;
+    /* display: inline-block; */
     
     margin: 0.5em;
+
+    font-family: "Verdana", Times, serif;
+    font-size: 1em;
+    font-weight: bold;
+
+    text-align : left;
+    text-align : top;
+    padding: 1em;
+    /* text- */
 }
 
 .unflippedCard{
@@ -24,5 +34,5 @@
 }
 
 .flippedCard{
-    background-color: rgb(228, 13, 13);
+    background-color: rgb(200, 205, 248);
 }
