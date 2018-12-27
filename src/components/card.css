@@ -1,0 +1,28 @@
+.hand{
+    
+    display: inline-block;
+    
+    margin: 0.5em;
+}
+
+.card{
+    height: 17em;
+    width: 10em;
+    
+    border-width: 0.8em;
+    border-style: solid;
+    border-color: white;
+    border-radius: 0.8em;
+    
+    display: inline-block;
+    
+    margin: 0.5em;
+}
+
+.unflippedCard{
+    background-color: black;
+}
+
+.flippedCard{
+    background-color: rgb(228, 13, 13);
+}
