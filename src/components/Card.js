@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './blackjack.css'
 import './card.css';
 
 class Card extends Component {
@@ -25,17 +26,17 @@ class Card extends Component {
                 <div className="card flippedCard">{this.props.card.slice(0,-1)}</div>
             )
         }else if (this.state.flipped === false){
-            return(
-            <div className="card unflippedCard"></div>
+            return (
+                <div className="card unflippedCard"> </div>
             )
         }
     }
    
     render() { 
     return (
-      <div onClick={this.handleClick}>
+      <span className='card-container' onClick={this.handleClick}>
             {this.renderCard()}
-      </div>
+      </span>
     );
   }
 }

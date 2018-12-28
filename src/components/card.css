@@ -1,21 +1,14 @@
-.hand{ 
-    display: inline-block;
-    
-    margin: -1.5em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-
 .card{
     height: 12em;
     width: 7em;
+
+    /* display: inline-block; */
     
     border-width: 0.8em;
     border-style: solid;
     border-color: white;
     border-radius: 0.8em;    
     
-    /* display: inline-block; */
     
     margin: 0.5em;
 
@@ -26,6 +19,12 @@
     text-align : left;
     text-align : top;
     padding: 1em;
+
+    display: inline-block;
+    
+    margin: -1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     /* text- */
 }
 

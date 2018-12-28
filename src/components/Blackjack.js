@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Card from './Card.js'
 import Button from './Button.js'
 import './blackjack.css'
-import './card.css'
 
 class Home extends Component {
 
@@ -92,51 +91,80 @@ class Home extends Component {
 ///////////////////////////////  
 
   renderHand(hand){
-    return(
-      hand.map(card => {
-        console.log(card)
-        return(
-          <div className='hand'>
-            <Card card={card} flipped={true}/>
-          </div>
-        )
-      })
-    )
+    console.log(hand)
+    if (hand.length === 0){
+      return(
+        <span className='card-container'>
+          <Card card={"  "} flipped={false}/>
+          <Card card={"  "} flipped={false}/>
+        </span>
+      )
+    } 
+   else {
+      return(
+        hand.map(card => {
+          console.log(card)
+          return(
+            <span>
+              <Card card={card} flipped={true}/>
+            </span>
+          )
+        })
+      )
+    }
   }
   
   renderPoints(player){
-    if (player == 'dealer'){
+    if (player === 'dealer'){
       return(
-        <div className='dealerPoints'>
-          {this.state.dealerPoints}
+        <div className='pointsCounter'>
+          Dealer's hand: {this.state.dealerPoints}
         </div>
       )
-    }else if(player == 'player'){
+    }else if(player === 'player'){
       return(
-        <div className='playerPoints'>
-          {this.state.playerPoints}
+        <div className='pointsCounter'>
+          Player's hand: {this.state.playerPoints}
         </div>
       )
     }
   }
 
     render() {
+      let drawIsActive = true
+      let hitIsActive = false
+      let standIsActive = false
+
+      if(this.state.gameStatus == 'over'){
+        
+      } else if(this.state.gameStatus == 'ongoing') { 
+        drawIsActive = false
+        hitIsActive = true
+        standIsActive = true
+      }
+
+      // let results=""
+      // if (this.state.gameStatus == 'over'){
+      //   results += "result"
+      // }
     
     return (
       <div className='background'>   
         <div className= 'dealerHand'>
-          {this.renderHand(this.state.dealerHand)}
           {this.renderPoints('dealer')}
+          {this.renderHand(this.state.dealerHand)}
         </div>
-        <div className= 'playerHand'>
-          {this.renderHand(this.state.playerHand)}
+        <div className='playerHand'>
           {this.renderPoints('player')}
+          <div className={results}>
+            {this.renderHand(this.state.playerHand)}
+          </div>
         </div>
         <div className= 'dashboard'>
-          <Button name='Draw' handleClick={this.deal.bind(this)}></Button>
-          <Button name='Hit'handleClick={this.hit.bind(this)}></Button>
-          <Button name='Stand'handleClick={this.stand.bind(this)}></Button>
-          <Button name='Log state'handleClick={this.log_state.bind(this)}></Button>
+          <Button name='Draw' handleClick={this.deal.bind(this)} isActive={drawIsActive}></Button>
+          <Button name='Hit' handleClick={this.hit.bind(this)} isActive={hitIsActive}></Button>
+          <Button name='Stand' handleClick={this.stand.bind(this)} isActive={standIsActive}></Button>
+          <Button name='Log state' handleClick={this.log_state.bind(this)} isActive={true}></Button>
         </div>
       </div>
     );

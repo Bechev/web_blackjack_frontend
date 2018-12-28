@@ -12,11 +12,58 @@
 
     height: 4em;
     width: 10em;
-    background-color: white;
+    background-color: rgb(175, 175, 175);
     margin: 0.5em;
 
     border-width: 0.2em;
     border-style: solid;
-    border-color: rgb(80, 80, 80);
+    border-color: rgb(131, 131, 131);
     border-radius: 0.5em;
+
+    color: rgb(131, 131, 131);
 }
+
+.active{
+    background-color: white;
+    border-color: rgb(80, 80, 80);
+    color: rgb(80, 80, 80);
+}
+
+.pointsCounter{
+    position: relative;
+    top: 0.5em;
+    left: 30.5em;
+    
+    
+    height: 2em;
+    width: 10em;
+    margin: 0.2em;
+
+    background-color: rgb(177, 177, 177);
+
+    border-width: 0.1em;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+}
+
+.hand{ 
+    display: inline-block;
+    
+    margin: -1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.card-container{
+    height: 0em;
+    width: 0em;
+
+    margin: 0em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+/* .results{
+    background-color: rgb(199, 199, 199);
+    opacity: 50%;
+} */
