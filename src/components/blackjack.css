@@ -1,8 +1,7 @@
 .background{
-    background-color: grey;
+    background-color: rgb(179, 179, 179);
     position: absolute;
     top: 1.5em;
-    left: 0em;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -32,38 +31,52 @@
 .pointsCounter{
     position: relative;
     top: 0.5em;
-    left: 30.5em;
     
     
     height: 2em;
     width: 10em;
-    margin: 0.2em;
+    margin: 1em auto;
 
-    background-color: rgb(177, 177, 177);
+    background-color: rgb(255, 255, 255);
 
-    border-width: 0.1em;
+    /* border-width: 0.1em; */
     border-style: solid;
     border-color: rgb(0, 0, 0);
+    border-width: 0.2em;
+
+    font-weight: bold;
+    font-size: 1em;
+
+    text-align: center;
+    align-items: center; /* align vertical */
+    padding-top: 0.4em;
+
+    border-radius: 0.5em;
+
 }
 
 .hand{ 
     display: inline-block;
+
+    position: relative;
+    left: 50%;
     
     margin: -1.5em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
 
-.card-container{
-    height: 0em;
-    width: 0em;
-
-    margin: 0em;
-    margin-top: 0em;
-    margin-bottom: 0em;
+.lostGame{
+    background-color: rgb(167, 29, 29);
+    margin: 0 auto;
 }
 
-/* .results{
-    background-color: rgb(199, 199, 199);
-    opacity: 50%;
-} */
+.wonGame{
+    background-color: rgb(0, 128, 32);
+    margin: 0 auto;
+}
+
+.tieGame{
+    background-color: rgb(116, 116, 116);
+    margin: 0 auto;
+}

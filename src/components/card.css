@@ -1,37 +1,45 @@
 .card{
-    height: 12em;
-    width: 7em;
-
-    /* display: inline-block; */
+    height: 6em;
+    width: 3em;  
     
-    border-width: 0.8em;
+    border-width: 0.05em;
     border-style: solid;
-    border-color: white;
-    border-radius: 0.8em;    
-    
-    
-    margin: 0.5em;
+    border-color: rgb(0, 0, 0);
+    border-radius: 0.2em; 
 
+    margin: 1em;
+
+    display: inline-block;
+    
+    margin: -1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    
     font-family: "Verdana", Times, serif;
-    font-size: 1em;
+    font-size: 2em;
     font-weight: bold;
 
     text-align : left;
     text-align : top;
     padding: 1em;
+}
 
-    display: inline-block;
-    
-    margin: -1.5em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    /* text- */
+.card-symbol{
+    text-align: center;
 }
 
 .unflippedCard{
-    background-color: black;
+    /* border-width: 0.4em;
+    border-style: solid;
+    border-color: white;
+    border-radius: 0.2em;    */
+    background-color: rgb(200, 205, 248);
 }
 
 .flippedCard{
-    background-color: rgb(200, 205, 248);
+    border-width: 0.05em;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-radius: 0.2em;   
+    background-color: rgb(255, 255, 255);
 }
