@@ -1,0 +1,141 @@
+  constructor(props){
+    super(props)
+    this.state = {
+      gameStatus: 'not started',
+      dealerHand: [],
+      dealerPoints: 0,
+      playerHand: [],
+      playerPoints: 0
+    }
+  }
+
+
+// ASYNC FUNCTIONS ///////////////////////////////////////////////////////////////////////
+  deal(){
+      fetch('http://localhost:3000/games/create',{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        body: JSON.stringify({
+          UUID: 'UUID'
+        })
+      })
+      .then(response => {
+        return response.json();
+      })
+      .then(function(data) {
+      }.bind(this))
+    }
+  }  
+  
+  hit(){
+    if (this.state.gameStatus === 'ongoing'){
+      fetch('http://localhost:3000/games/hit',{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        body: JSON.stringify({
+          hand_UUID: 'UUID'
+        })
+      })    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+    }.bind(this));
+    }
+  }
+
+  stand(){
+    if(this.state.gameStatus === 'ongoing'){
+      fetch('http://localhost:3000/games/create',{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        body: JSON.stringify({
+          hand_UUID: 'hand_UUID'
+        })
+      })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+      }.bind(this));
+    }
+  }  
+// END OF ASYNC FUNCTIONS //////////////////////////////////////////////////////////
+
+
+// TO BE REMOVED //////////////
+  log_state(){
+    console.log(this.state)
+  }
+///////////////////////////////  
+
+// RENDER FUNCTIONS ///////////////////////////////////////////////////////////////////
+  renderHand(hand){
+    if (hand.length === 0){
+      return(
+        <span className='card-container'>
+          <Card flipped={false}/>
+          <Card flipped={false}/>
+        </span>
+      )
+    } 
+   else {
+      return(
+        hand.map(card => {
+          return(
+            <span>
+              <Card card={card} flipped={true}/>
+            </span>
+          )
+        })
+      )
+    }
+  }
+  
+  renderPoints(player){
+    if (player === 'dealer'){
+      return(
+        <div className='pointsCounter'>
+          Dealer's hand: {this.state.dealerPoints}
+        </div>
+      )
+    }else if(player === 'player'){
+      return(
+        <div className='pointsCounter'>
+          Player's hand: {this.state.playerPoints}
+        </div>
+      )
+    }
+  }
+
+  renderResult(){
+    let results
+    if( this.state.gameStatus === 'lost' || this.state.gameStatus === 'busted'){
+      results = 'lostGame'
+    }else if(this.state.gameStatus === 'won' || this.state.gameStatus === 'blackjack'){
+      results = 'wonGame'
+    } else if(this.state.gameStatus === 'push'){
+      results = 'tieGame'
+    }
+    return results
+  }
+
+  // renderGameStatus(){
+  //   if (this.state.gameStatus === 'lost' ||
+  //       this.state.gameStatus === 'busted' ||
+  //       this.state.gameStatus === 'won'||
+  //       this.state.gameStatus === 'blackjack'){
+
+  //         return(
+  //           <div>
+  //             {this.state.gameStatus}
+  //           </div>
+  //         )
+  //       }
+  // }
+// END OF RENDER FUNCTIONS ///////////////////////////////////////////////////////////////////

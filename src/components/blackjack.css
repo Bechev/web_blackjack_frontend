@@ -1,14 +1,16 @@
 .background{
-    background-color: rgb(179, 179, 179);
+    background-color: rgb(224, 224, 224);
     position: absolute;
     top: 1.5em;
     height: 100%;
     width: 100%;
     overflow: auto;
+    /* background-image: url("../assets/blackjack_table.jpg"); */
+    background-size:cover;
+    /* opacity: 0.2; */
 }
 
 .button{
-
     height: 4em;
     width: 10em;
     background-color: rgb(175, 175, 175);
@@ -22,7 +24,53 @@
     color: rgb(131, 131, 131);
 }
 
-.active{
+/* .table{
+    display: inline-block;
+} */
+
+.hand{
+    margin: 2em 0em 2em 0em;
+    padding: 0.5em 0em 1em 0em;
+}
+
+.activeHand{
+    background: linear-gradient(to top, rgb(89, 133, 184), rgb(224, 224, 224));
+}
+
+.blackjack{
+    border-bottom: solid 0.2em ;
+    border-top: solid 0.2em ;
+    border-color: rgb(255, 153, 0);
+
+    font-weight: bold;
+    color: rgb(255, 153, 0) ;
+}
+
+.wonGame{
+    border-bottom: solid 0.2em ;
+    border-top: solid 0.2em ;
+    border-color: rgb(0, 128, 32);
+
+    font-weight: bold;
+}
+
+.tieGame{
+    border-bottom: solid 0.2em ;
+    border-top: solid 0.2em ;
+    border-color: rgb(116, 116, 116);
+
+    font-weight: bold;
+}
+
+.lostGame{
+    border-bottom: solid 0.2em ;
+    border-top: solid 0.2em ;
+    border-color: rgb(167, 29, 29);
+
+    font-weight: bold;
+}
+
+.active_button{
     background-color: white;
     border-color: rgb(80, 80, 80);
     color: rgb(80, 80, 80);
@@ -31,7 +79,6 @@
 .pointsCounter{
     position: relative;
     top: 0.5em;
-    
     
     height: 2em;
     width: 10em;
@@ -42,41 +89,92 @@
     /* border-width: 0.1em; */
     border-style: solid;
     border-color: rgb(0, 0, 0);
-    border-width: 0.2em;
+    border-width: 0.1em;
 
     font-weight: bold;
     font-size: 1em;
-
+    text-align: justify;
     text-align: center;
     align-items: center; /* align vertical */
     padding-top: 0.4em;
 
     border-radius: 0.5em;
-
 }
 
-.hand{ 
+.player_dashboard{
     display: inline-block;
+    vertical-align: top;
+    align-items: center;
+    margin: 0.5em 3em 0.5em 3em;
+}
 
-    position: relative;
-    left: 50%;
+/* .dealer_dashboard{
+    display: inline-block;
+    vertical-align: top;
+    align-items: center;
+    margin: 0.5em 3em 0.5em 3em;
+} */
+
+.card{
+    height: 6em;
+    width: 3em;  
     
-    margin: -1.5em;
+    border-width: 0.05em;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-radius: 0.2em; 
+
+    margin: 1em;
+
+    display: inline-block;
+    vertical-align: top;
+    
+    margin: -1em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+    
+    font-family: "Verdana", Times, serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    
+    padding: 1em;
 }
 
-.lostGame{
-    background-color: rgb(167, 29, 29);
-    margin: 0 auto;
+.card_background{
+    height: 50%;
+    width: 100%;
 }
 
-.wonGame{
-    background-color: rgb(0, 128, 32);
-    margin: 0 auto;
+.faceDownCard{
+    background-color: rgb(255, 242, 208);
+
 }
 
-.tieGame{
-    background-color: rgb(116, 116, 116);
-    margin: 0 auto;
+.faceUpCard{
+    background-color: rgb(255, 255, 255);
+    border-width: 0.05em;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-radius: 0.2em;   
+    
+    text-align : left;
+    text-align : top;
+}
+
+
+.card-symbol-minature{
+    height: 15%;
+    width: 30%;
+}
+
+.card-symbol{
+    height: 50%;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 30%;
+}
+
+.dashboard{
+    margin: 2em;
 }

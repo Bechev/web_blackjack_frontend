@@ -30,7 +30,6 @@ const Navbar = () =>
       to="/about"
       exact
       style={link}
-
     >About</NavLink>
   </div>;
 

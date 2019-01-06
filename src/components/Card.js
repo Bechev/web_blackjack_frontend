@@ -1,50 +1,61 @@
 import React, { Component } from 'react';
 import './blackjack.css'
-import hearts from '../assets/cards_hearts.jpg'
-import diamonds from '../assets/cards_diamonds.jpg'
-import spades from '../assets/cards_spades.jpg'
-import clubs from '../assets/cards_clubs.jpg'
-import './card.css';
+import hearts from '../assets/cards_hearts.png'
+import diamonds from '../assets/cards_diamonds.png'
+import spades from '../assets/cards_spades.png'
+import clubs from '../assets/cards_clubs.png'
+import bolt from '../assets/bolt.png'
 
 class Card extends Component {
 
     renderCard(){
-        if (this.props.flipped === true){
+        if(this.props.card){
+
             let card_symbol = null
             switch(this.props.card[this.props.card.length -1]){
                 case 'h':
-                    card_symbol = hearts
-                    break
-                case 's':
-                    card_symbol = spades
-                    break
-                case 'c':
-                    card_symbol = clubs
-                    break
-                case 'd':
-                    card_symbol = diamonds
-                    break
+            card_symbol = hearts
+                break
+            case 's':
+            card_symbol = spades
+                break
+            case 'c':
+            card_symbol = clubs
+                break
+            case 'd':
+            card_symbol = diamonds
+                break
             }
             return (
-                <div className="card flippedCard">
-                    {this.props.card.slice(0,-1)}
-                    <span>
-                        <img className="card-symbol" src={card_symbol} alt='card' height="25" width="25"></img>
-                    </span>
-                </div>
+                <React.Fragment>
+                {this.props.card.slice(0,-1)}
+                <React.Fragment>
+                    <img className="card-symbol-minature" src={card_symbol} alt='card' height="25" width="25"></img>
+                    <img className="card-symbol" src={card_symbol} alt='card' height="25" width="25"></img>
+                </React.Fragment>
+            </React.Fragment>
             )
-        }else if (this.props.flipped === false){
-            return (
-                <div className="card unflippedCard"></div>
+        }else{
+            return(
+                <React.Fragment>
+                        <img className="card_background" src={bolt} alt='card_background' height="75" width="75" ></img>
+                </React.Fragment>
             )
         }
     }
    
     render() { 
+        let cardClass = 'card'
+        if (this.props.faceDown === true){
+            cardClass += ' faceDownCard'
+        }else{
+            cardClass += ' faceUpCard'
+        }
+
     return (
-      <span className='card-container' onClick={this.handleClick}>
+        <div className={cardClass}>
             {this.renderCard()}
-      </span>
+        </div>
     );
   }
 }

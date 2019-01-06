@@ -28,15 +28,11 @@
     text-align: center;
 }
 
-.unflippedCard{
-    /* border-width: 0.4em;
-    border-style: solid;
-    border-color: white;
-    border-radius: 0.2em;    */
+.faceDownCard{
     background-color: rgb(200, 205, 248);
 }
 
-.flippedCard{
+.faceUpCard{
     border-width: 0.05em;
     border-style: solid;
     border-color: rgb(0, 0, 0);
